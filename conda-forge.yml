@@ -14,3 +14,5 @@ remote_ci_setup:
   - "conda-forge-ci-setup=4"
   - "conda-forge/label/patchelf_dev::conda-build>=26.7"
   - "conda-forge/label/patchelf_dev::patchelf>=0.19"
+workflow_settings: 
+  store_build_artifacts: true
