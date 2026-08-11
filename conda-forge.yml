@@ -10,3 +10,7 @@ github:
 provider:
   linux_aarch64: default
   linux_ppc64le: default
+remote_ci_setup:
+  - "conda-forge-ci-setup=4"
+  - "conda-forge/label/patchelf_dev::conda-build>=26.7"
+  - "conda-forge/label/patchelf_dev::patchelf>=0.19"
