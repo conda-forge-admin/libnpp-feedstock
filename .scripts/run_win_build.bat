@@ -30,7 +30,7 @@ if !errorlevel! neq 0 exit /b !errorlevel!
 
 echo Creating environment
 call "%MICROMAMBA_EXE%" create --yes --root-prefix "%MAMBA_ROOT_PREFIX%" --prefix "%MINIFORGE_HOME%" ^
-    --channel conda-forge ^
+    --channel conda-forge --channel conda-forge/label/patchelf_dev ^
     pip python=3.12 conda-build conda-forge-ci-setup=4 "conda-forge/label/patchelf_dev::conda-build>=26.5" "conda-forge/label/patchelf_dev::patchelf>=0.19"
 if !errorlevel! neq 0 exit /b !errorlevel!
 echo Removing %MAMBA_ROOT_PREFIX%
