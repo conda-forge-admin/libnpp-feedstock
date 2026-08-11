@@ -53,6 +53,7 @@ outputs:
     test:
       requires:
         - patchelf  # [linux]
+        - python
       files:
         - test-rpath.sh
       commands:

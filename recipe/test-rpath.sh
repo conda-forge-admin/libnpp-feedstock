@@ -9,6 +9,11 @@ errors=""
 for lib in `find ${PREFIX}/${targetsDir}/lib -type f`; do
     [[ $lib =~ \.so ]] || continue
 
+    echo "Checking $lib"
+    if ! python -c "import ctypes; ctypes.CDLL('$lib')"; then
+        errors+="$lib\n"
+    fi
+
     rpath=$(patchelf --print-rpath $lib)
     echo "$lib rpath: $rpath"
     if [[ $rpath != "\$ORIGIN" ]]; then
