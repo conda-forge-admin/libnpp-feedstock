@@ -30,7 +30,7 @@ build:
 requirements:
   build:
     - cf-nvidia-tools 1.*  # [linux]
-    - patchelf <0.18.0                      # [linux]
+    - patchelf             # [linux]
 
 outputs:
   - name: libnpp
